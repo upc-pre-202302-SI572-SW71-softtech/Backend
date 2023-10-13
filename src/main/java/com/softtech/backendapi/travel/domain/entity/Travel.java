@@ -1,5 +1,9 @@
 package com.softtech.backendapi.travel.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.softtech.backendapi.activity.domain.entity.Activity;
+import com.softtech.backendapi.agency.domain.entity.Agency;
+import com.softtech.backendapi.tip.domain.entity.Tip;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -8,6 +12,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -72,18 +78,19 @@ public class Travel {
     @Column(name = "photo4")
     private String photo4;
 
-//    @NotNull
-//    @Column(name = "agency_id")
-//    private Agency agencyId;
-
     @Column(name = "created_date")
     private String createdDate;
 
-//    @NotNull
-//    @Column(name = "activities")
-//    private List<Activity> activities;
-//
-//    @NotNull
-//    @Column(name = "tips")
-//    private List<Tip> tips;
+    @ManyToOne()
+    @JoinColumn(name = "agency_id")
+    @JsonIgnoreProperties({"travels"})
+    private Agency agency;
+
+    @JsonIgnoreProperties({"travel"})
+    @OneToMany(mappedBy = "travel", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Activity> activities;
+
+    @JsonIgnoreProperties({"travel"})
+    @OneToMany(mappedBy = "travel", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Tip> tips;
 }
