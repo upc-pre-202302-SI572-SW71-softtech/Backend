@@ -55,7 +55,7 @@ public class Travel {
 
     @NotNull
     @NotBlank
-    @Column(name = "photo-portada")
+    @Column(name = "photo_portada")
     private String photoPortada;
 
     @NotNull
