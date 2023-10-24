@@ -2,7 +2,6 @@ package com.softtech.backendapi.activity.api;
 
 import com.softtech.backendapi.activity.domain.entity.Activity;
 import com.softtech.backendapi.activity.service.ActivityServiceImpl;
-import com.softtech.backendapi.agency.domain.service.AgencyService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/activity")
+@CrossOrigin(origins = "*")
 @AllArgsConstructor
 public class ActivityController {
 

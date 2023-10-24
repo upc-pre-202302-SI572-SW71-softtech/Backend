@@ -1,5 +1,7 @@
 package com.softtech.backendapi.agency.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.softtech.backendapi.travel.domain.entity.Travel;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -61,6 +63,7 @@ public class Agency {
     @Column(name = "stars")
     private Integer stars;
 
-//    @Column(name = "travels")
-//    private List<Travel> travels;
+    @JsonIgnoreProperties({"agency", "activities", "tips"})
+    @OneToMany(mappedBy = "agency", cascade = CascadeType.ALL)
+    private List<Travel> travels;
 }

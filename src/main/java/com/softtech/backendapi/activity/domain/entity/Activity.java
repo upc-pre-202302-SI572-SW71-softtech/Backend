@@ -1,5 +1,7 @@
 package com.softtech.backendapi.activity.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.softtech.backendapi.travel.domain.entity.Travel;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -30,7 +32,8 @@ public class Activity {
     @Column(name = "description")
     private String description;
 
-//    @NotNull
-//    @Column(name = "travel_id")
-//    private Travel travelId;
+    @JsonIgnoreProperties({"activities", "tips", "agency"})
+    @ManyToOne()
+    @JoinColumn(name = "travel_id")
+    private Travel travel;
 }
