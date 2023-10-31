@@ -22,9 +22,9 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     #    JDBC : SGDB :// HOST : PORT / DB
-    url: jdbc:postgresql://localhost:5432/pruebaiot
+    url: jdbc:postgresql://localhost:5432/pruebaIot
     username: postgres
-    password: 951745794
+    password: admin
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     database: postgresql
