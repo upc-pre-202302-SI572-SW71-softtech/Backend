@@ -1,8 +1,7 @@
-HELP.md
+# Ignore everything in the target directory
 target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+
+# Except for jar files
 !target/*.jar
 
 ### STS ###
