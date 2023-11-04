@@ -1,5 +1,7 @@
 package com.softtech.backendapi.routes.api;
 
+import com.softtech.backendapi.routes.domain.entity.Routes;
+import com.softtech.backendapi.routes.service.RoutesServiceImpl;
 import com.softtech.backendapi.travel.domain.entity.Travel;
 import com.softtech.backendapi.travel.service.TravelServiceImpl;
 import lombok.AllArgsConstructor;
@@ -12,10 +14,10 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping("api/travel")
+@RequestMapping("api/routes")
 @AllArgsConstructor
 public class RoutesController {
-   @Autowired
+    @Autowired
     private RoutesServiceImpl routesService;
 
     @PostMapping
