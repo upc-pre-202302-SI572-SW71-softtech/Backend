@@ -94,3 +94,4 @@ public class Travel {
     @OneToMany(mappedBy = "travel", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Tip> tips;
 }
+

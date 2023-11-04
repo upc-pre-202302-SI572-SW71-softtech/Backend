@@ -17,7 +17,6 @@ public class DeviceParameters {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-//    @NotNull -> aún no tenemos lo wareables
     @Column(name = "device_id")
     private Long deviceId;
     @Column(name = "humidity")
