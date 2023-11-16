@@ -15,7 +15,7 @@ import lombok.*;
 public class Routes {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(name = "name")
     private String name;
@@ -25,4 +25,13 @@ public class Routes {
 
     @Column(name = "difficult")
     private Integer difficult;
+
+    @Column(name = "photo_url")
+    private String photoUrl;
+
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "score")
+    private String score;
 }

@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://iot.postgres.database.azure.com:5432/iot?sslmode=require
+    username: jerryquispe
+    password: JARut1:16!
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+    show-sql: true

@@ -1,6 +1,5 @@
 package com.softtech.backendapi.tip.api;
 
-import com.softtech.backendapi.activity.service.ActivityServiceImpl;
 import com.softtech.backendapi.tip.domain.entity.Tip;
 import com.softtech.backendapi.tip.service.TipServiceImpl;
 import lombok.AllArgsConstructor;
