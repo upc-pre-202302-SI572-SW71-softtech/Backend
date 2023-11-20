@@ -5,6 +5,7 @@ import com.softtech.backendapi.devices.domain.service.DeviceService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -24,11 +25,13 @@ public class DeviceController {
     }
 
     @GetMapping
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public List<Device> getAllDevices() {
         return deviceService.getAll();
     }
 
     @PostMapping
+    @PreAuthorize("hasRole('ROLE_MANAGER')")
     public ResponseEntity<Device> createDevice(@RequestBody Device device) {
         return new ResponseEntity<>(deviceService.save(device), HttpStatus.CREATED);
     }
