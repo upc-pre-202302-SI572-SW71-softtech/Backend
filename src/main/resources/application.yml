@@ -1,12 +1,17 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://iot.postgres.database.azure.com:5432/iot?sslmode=require
-    username: jerryquispe
-    password: JARut1:16!
+    url: jdbc:postgresql://localhost:5432/go2climb
+    username: postgres
+    password: password
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     database: postgresql
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
     show-sql: true
+authorization:
+  jwt:
+    secret: BB31C6F7EA1D1065F1914939BD1EFF6A1B5A536D1675FF735332D6A78D7FE1AC
+    expiration:
+      days: 7
