@@ -13,6 +13,8 @@ public interface DeviceService {
     Device getById(Long id);
 
     Device save(Device entity);
+
     Device update(Device entity);
+
     ResponseEntity<?> delete(Long id);
 }

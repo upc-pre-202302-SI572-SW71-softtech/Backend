@@ -12,14 +12,6 @@ public interface DeviceParameterService {
 
     DeviceParameters getById(Long id);
 
-//    String getTemperatureById(Long id);
-//
-//    String getHumidityById(Long id);
-//
-//    String getLocalisationById(Long id);
-//
-//    StatusDevice getStatusById(Long id);
-
     DeviceParameters save(DeviceParameters entity);
 
     DeviceParameters update(DeviceParameters entity);
