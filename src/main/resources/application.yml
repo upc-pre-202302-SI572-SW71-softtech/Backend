@@ -1,7 +1,9 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://go2climb_user:kaTNMJ5ANNj9LDTv91ZCpDIlsmq8qrYw@dpg-clee9t415k1s739i64pg-a.oregon-postgres.render.com/go2climb
+    url: jdbc:postgresql://dpg-clee9t415k1s739i64pg-a.oregon-postgres.render.com/go2climb
+    username: go2climb_user
+    password: kaTNMJ5ANNj9LDTv91ZCpDIlsmq8qrYw
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     database: postgresql
