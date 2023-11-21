@@ -1,5 +1,8 @@
+FROM maven:3.1.4-openjdk-20 AS build
+COPY . .
+RUN mvn clean package -DskipTests
+
 FROM openjdk:20-jdk
-VOLUME /tmp
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+COPY --from=build /target/backendapi-0.0.1-SNAPSHOT.jar go2climb.jar
+EXPOSE 8080
+ENTRYPOINT ["java","-jar","go2climb.jar"]
