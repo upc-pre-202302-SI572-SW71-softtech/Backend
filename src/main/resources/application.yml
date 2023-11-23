@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://seguridad.postgres.database.azure.com:5432/postgres?sslmode=require
+    username: seguridad
+    password: Password1234!"#$
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+authorization:
+  jwt:
+    secret: BB31C6F7EA1D1065F1914939BD1EFF6A1B5A536D1675FF735332D6A78D7FE1AC
+    expiration:
+      days: 7
